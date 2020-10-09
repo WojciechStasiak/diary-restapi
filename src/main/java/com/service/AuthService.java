@@ -81,7 +81,6 @@ public class AuthService {
             });
         }
         user.setRoles(roles);
-        System.out.println(user.toString());
         userRepository.save(user);
         String token = generateVerificationToken(user);
         mailService.sendMail(new NotificationEmail("Please activate your account",
